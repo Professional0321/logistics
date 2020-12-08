@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { InputAdornment } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 export const Container = styled.div`
   display: flex;
@@ -36,6 +36,7 @@ export const LogoArrowImg = styled.img`
   width: 15px;
   margin-top: 8px;
 `;
+
 export const LoginForm = styled.div`
   display: flex;
   flex-direction: column;
@@ -43,10 +44,10 @@ export const LoginForm = styled.div`
   box-shadow: 3px -5px 40px rgba(205, 205, 212, 0.1);
   border-radius: 20px;
   margin-top: 20px;
-  padding: 20px;
+  padding: 25px;
 `;
 
-export const LoginFirst = styled.div`
+export const FormHeader = styled.div`
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -59,7 +60,7 @@ export const LoginFirst = styled.div`
   margin-bottom: 15px;
 `;
 
-export const TitleContent = styled.div`
+export const FormLabel = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -76,8 +77,7 @@ export const LoginTitle = styled.div`
   color: #2a2d52;
 `;
 
-export const InputContainer = styled.div`
-  padding: 0px 10px;
+export const FormField = styled.div`
   margin-top: 15px;
   margin-bottom: 25px;
 `;
@@ -97,7 +97,7 @@ interface InputErrProps {
   readonly isValid: boolean;
 }
 
-export const EmailInputFieldWrapper = styled.div<InputErrProps>`
+export const EmailContainer = styled.div<InputErrProps>`
   & .MuiTextField-root {
     display: flex;
     width: 100%;
@@ -116,35 +116,25 @@ export const EmailInputFieldWrapper = styled.div<InputErrProps>`
   }
 `;
 
-export const InPutIconStyle = styled(InputAdornment)`
-  color: #92929d;
-`;
-
-export const BtnContainer = styled.div`
-  padding: 0 10px;
-  margin-bottom: 25px;
-`;
-
 export const LoginBtn = styled(Button)`
   width: 100%;
-  text-transform: uppercase;
   &.MuiButton-containedPrimary:hover {
     background-color: #00b796;
   }
 `;
 
-export const UnderlineContainer = styled.div`
+export const SeperatWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  margin-top: 25px;
 `;
 
-export const Underline = styled.div`
+export const SpearateLine = styled.div`
   border-bottom: 1px solid #f1f1f5;
   width: 50%;
 `;
 
-export const UnderText = styled.div`
+export const Text = styled.div`
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -155,11 +145,11 @@ export const UnderText = styled.div`
   margin: 0 10px;
 `;
 
-export const BottomForm = styled.div`
-  padding: 15px 10px;
+export const SocialButtonWrapper = styled(Grid)`
+  padding: 15px 0px;
 `;
 
-export const BottomItem = styled.div`
+export const SocialButton = styled.div`
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -173,7 +163,7 @@ export const BottomItem = styled.div`
   }
 `;
 
-export const BottomImg = styled.img`
+export const SocialImg = styled.img`
   width: 16px;
   height: 16px;
 `;

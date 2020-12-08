@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { InPutIconStyle, EmailInputFieldWrapper } from './styles';
+import { EmailContainer } from './styles';
 
 interface InputProps {
   value: string;
@@ -10,10 +10,10 @@ interface InputProps {
   error: string;
 }
 
-const EmailInput: React.FC<InputProps> = (props) => {
+const EmailField: React.FC<InputProps> = (props) => {
   const { value, onChange, error } = props;
   return (
-    <EmailInputFieldWrapper isValid={!error}>
+    <EmailContainer isValid={!error}>
       <TextField
         required
         id="email"
@@ -23,15 +23,15 @@ const EmailInput: React.FC<InputProps> = (props) => {
         onChange={onChange}
         InputProps={{
           startAdornment: (
-            <InPutIconStyle position="start">
-              <MailOutlineIcon />
-            </InPutIconStyle>
+            <InputAdornment position="start">
+              <MailOutlineIcon fontSize="small" />
+            </InputAdornment>
           ),
           endAdornment: <InputAdornment position="end">{error}</InputAdornment>,
         }}
       />
-    </EmailInputFieldWrapper>
+    </EmailContainer>
   );
 };
 
-export default EmailInput;
+export default EmailField;
