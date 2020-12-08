@@ -8,26 +8,26 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import Grid from '@material-ui/core/Grid';
 
 import EmailField from './EmailField';
-import ArrowImg from '../../static/img/logo_arrow.png';
-import GoogleImg from '../../static/img/Google.png';
-import FacebookImg from '../../static/img/Fb.png';
-import TwitterImg from '../../static/img/Twitter.png';
-import * as loginStyles from './styles';
+import ArrowImg from '../../assets/img/logo_arrow.png';
+import GoogleImg from '../../assets/img/Google.png';
+import FacebookImg from '../../assets/img/Fb.png';
+import TwitterImg from '../../assets/img/Twitter.png';
+import * as Styles from './styles';
 
-interface LoginState {
+interface ILoginState {
   email: string;
   password: string;
   confirmPassword: string;
   showPassword: boolean;
   showConfirmPassword: boolean;
 }
-interface LoginError {
+interface ILoginError {
   email: string;
   password: string;
 }
 
 const Login: React.FC = () => {
-  const [loginValues, setLoginValues] = useState<LoginState>({
+  const [loginValues, setLoginValues] = useState<ILoginState>({
     email: '',
     password: '',
     confirmPassword: '',
@@ -35,12 +35,12 @@ const Login: React.FC = () => {
     showConfirmPassword: false,
   });
 
-  const [errors, setErrors] = useState<LoginError>({
+  const [errors, setErrors] = useState<ILoginError>({
     email: '',
     password: '',
   });
 
-  const handleChange = (prop: keyof LoginState) => (
+  const handleChange = (prop: keyof ILoginState) => (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     let error: string = '';
@@ -87,27 +87,27 @@ const Login: React.FC = () => {
   };
 
   return (
-    <loginStyles.Container>
-      <loginStyles.LoginContainer>
-        <loginStyles.Logo>
+    <Styles.Container>
+      <Styles.LoginContainer>
+        <Styles.Logo>
           Luckabo
-          <loginStyles.LogoArrowImg src={ArrowImg} /> x
-        </loginStyles.Logo>
-        <loginStyles.LoginForm>
-          <loginStyles.FormHeader>JUST LOGIN FIRST</loginStyles.FormHeader>
-          <loginStyles.FormLabel>
-            <loginStyles.LoginTitle>Sign in to Luckabox</loginStyles.LoginTitle>
-            <loginStyles.LoginTitle>Customer</loginStyles.LoginTitle>
-          </loginStyles.FormLabel>
-          <loginStyles.FormField>
+          <Styles.LogoArrowImg src={ArrowImg} /> x
+        </Styles.Logo>
+        <Styles.LoginForm>
+          <Styles.FormHeader>JUST LOGIN FIRST</Styles.FormHeader>
+          <Styles.FormLabel>
+            <Styles.LoginTitle>Sign in to Luckabox</Styles.LoginTitle>
+            <Styles.LoginTitle>Customer</Styles.LoginTitle>
+          </Styles.FormLabel>
+          <Styles.FormField>
             <EmailField
               value={loginValues.email}
               onChange={handleChange('email')}
               error={errors.email}
             />
-          </loginStyles.FormField>
-          <loginStyles.FormField>
-            <loginStyles.InputField
+          </Styles.FormField>
+          <Styles.FormField>
+            <Styles.InputField
               required
               id="password"
               placeholder="Password"
@@ -137,9 +137,9 @@ const Login: React.FC = () => {
                 ),
               }}
             />
-          </loginStyles.FormField>
-          <loginStyles.FormField>
-            <loginStyles.InputField
+          </Styles.FormField>
+          <Styles.FormField>
+            <Styles.InputField
               required
               id="confirmPassword"
               placeholder="Confirm Password"
@@ -169,37 +169,35 @@ const Login: React.FC = () => {
                 ),
               }}
             />
-          </loginStyles.FormField>
-          <loginStyles.LoginBtn variant="contained" color="primary">
+          </Styles.FormField>
+          <Styles.LoginBtn variant="contained" color="primary">
             Login
-          </loginStyles.LoginBtn>
-          <loginStyles.SeperatWrapper>
-            <loginStyles.SpearateLine />
-            <loginStyles.Text>OR</loginStyles.Text>
-            <loginStyles.SpearateLine />
-          </loginStyles.SeperatWrapper>
-          <loginStyles.SocialButtonWrapper container spacing={1}>
+          </Styles.LoginBtn>
+          <Styles.SeperatWrapper>
+            <Styles.SpearateLine />
+            <Styles.Text>OR</Styles.Text>
+            <Styles.SpearateLine />
+          </Styles.SeperatWrapper>
+          <Styles.SocialButtonWrapper container spacing={1}>
             <Grid item xs>
-              <loginStyles.SocialButton>
-                <loginStyles.SocialImg src={GoogleImg}></loginStyles.SocialImg>
-              </loginStyles.SocialButton>
+              <Styles.SocialButton>
+                <Styles.SocialImg src={GoogleImg}></Styles.SocialImg>
+              </Styles.SocialButton>
             </Grid>
             <Grid item xs>
-              <loginStyles.SocialButton>
-                <loginStyles.SocialImg
-                  src={FacebookImg}
-                ></loginStyles.SocialImg>
-              </loginStyles.SocialButton>
+              <Styles.SocialButton>
+                <Styles.SocialImg src={FacebookImg}></Styles.SocialImg>
+              </Styles.SocialButton>
             </Grid>
             <Grid item xs>
-              <loginStyles.SocialButton>
-                <loginStyles.SocialImg src={TwitterImg}></loginStyles.SocialImg>
-              </loginStyles.SocialButton>
+              <Styles.SocialButton>
+                <Styles.SocialImg src={TwitterImg}></Styles.SocialImg>
+              </Styles.SocialButton>
             </Grid>
-          </loginStyles.SocialButtonWrapper>
-        </loginStyles.LoginForm>
-      </loginStyles.LoginContainer>
-    </loginStyles.Container>
+          </Styles.SocialButtonWrapper>
+        </Styles.LoginForm>
+      </Styles.LoginContainer>
+    </Styles.Container>
   );
 };
 export default Login;

@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-items: center;
   height: calc(100vh - 20px);
   padding: 10px;
+  background-color: #0f1c37;
 `;
 
 export const LoginContainer = styled.div`
@@ -93,11 +94,11 @@ export const InputField = styled(TextField)`
   }
 `;
 
-interface InputErrProps {
+interface IInputErrProps {
   readonly isValid: boolean;
 }
 
-export const EmailContainer = styled.div<InputErrProps>`
+export const EmailContainer = styled.div<IInputErrProps>`
   & .MuiTextField-root {
     display: flex;
     width: 100%;

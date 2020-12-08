@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../components/Login';
 
-const MainRoutes: React.FC = () => {
+const Routes: React.FC = () => {
   return (
     <Switch>
       <Route exact path="/" component={Login} />
@@ -10,4 +10,4 @@ const MainRoutes: React.FC = () => {
   );
 };
 
-export default MainRoutes;
+export default Routes;
